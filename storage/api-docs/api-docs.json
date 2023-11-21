@@ -14,6 +14,62 @@
         "version": "0.0.1"
     },
     "paths": {
+        "/api/gallery": {
+            "post": {
+                "tags": [
+                    "gallery"
+                ],
+                "summary": "Returns a Gallery API response",
+                "description": "A gallery to test out the API",
+                "operationId": "gallery",
+                "requestBody": {
+                    "description": "Data untuk mengunggah gambar",
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "description": "Judul Upload",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "description": "Deskripsi Gambar",
+                                        "type": "string"
+                                    },
+                                    "picture": {
+                                        "description": "File Gambar",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/getgallery": {
+            "get": {
+                "tags": [
+                    "gallery"
+                ],
+                "summary": "Returns a Gallery API response",
+                "description": "A gallery to test out the API",
+                "operationId": "getgallery",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/api/greet": {
             "get": {
                 "tags": [
